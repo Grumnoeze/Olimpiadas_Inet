@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <header class="encabezado">
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="Logo">
+        </div>
+        <nav class="menu">
+            <a href="">Nosotros</a>
+            <a href="">Galeria</a>
+            <a href="">Productos</a>
+            <a href="" class="btn">Contactos</a>
+        </nav>
+        <nav class="sesion">
+            {% if user.is_authenticated %}
+            <a href="{% url 'logouts' %}" id="contacto_btl">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}" id="contacto_btl">login</a>
+            {% endif %}
+        </nav>
+    
+    </header>
+    <main class="cuerpo">
+        {% block contentenedor %}
+        
+        {% endblock %} 
+    </main>
+    <footer class="pie">
+
+    </footer>
+</body>
+
+</html>
