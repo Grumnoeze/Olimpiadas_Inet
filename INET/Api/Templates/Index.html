@@ -32,7 +32,7 @@
         </nav> -->
         <nav class="session">
             {% if user.is_authenticated %}
-            <a href="{% url 'logout' %}" id="contacto_btl" class="button1">Cerrar Sesión</a>
+            <a href="{% url 'logouts' %}" id="contacto_btl" class="button1">Cerrar Sesión</a>
             {% else %}
             <a href="{% url 'login' %}" id="contacto_btl" class="button1">Ingresar</a>
             {% endif %}

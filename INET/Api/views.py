@@ -13,7 +13,7 @@ def Home(request):
 
 def salir(request):
     logout(request)
-    return redirect(to='Inicio')
+    return redirect('home')
 
 def Registro(request):
     data={
@@ -25,7 +25,7 @@ def Registro(request):
         user=authenticate(username=query.cleaned_data['username'],
                           password=query.cleaned_data['password1'])
         login(request,user)
-        return redirect(to='Inicio')
+        return redirect('home')
     data['form'] = query
     return render(request, 'registration/registro.html', data)
 
