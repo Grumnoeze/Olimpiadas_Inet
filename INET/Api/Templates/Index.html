@@ -13,17 +13,15 @@
 </head>
 
 <body class="body-index">
-    
     <header>
-        <a href="" class="header-logo"><img src="../static/media/logo.png" alt=""></a>
+        <a href="{% url 'home' %}" class="header-logo"><img src="{% static 'media/logo.png' %}" alt=""></a>
         <nav class="navigation">
             <ul>
-                <li><a href="">Inicio</a></li>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
                 <li><a href="">Sobre nosotros</a></li>
                 <li><a href="">Paquetes</a></li>
                 <li><a href="">Reseñas</a></li>
-                <li><a href=""><img src="../static/media/carrito.svg" alt=""></a></li>
-                <li><a href=""><img src="../static/media/buscar.svg" alt=""></a></li>
+                <li><a href=""><img src="{% static 'media/carrito.svg' %}" alt=""></a></li>
             </ul>
         </nav>
         <!-- <nav class="session">
