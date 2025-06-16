@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-index {
+    overflow-y: hidden;
+    background: url(../media/fondo-home.jpeg);
+    background-size: cover;
+}
+
+@font-face {
+    font-family: 'Ulagadi Extra Light';
+    src: url(../font/UlagadiSansExtraLight.ttf);
+}
+
+body {
+    background-repeat: no-repeat;
+    font-family: 'Ulagadi Extra Light';
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    font-family: 'Ulagadi Extra Light';
+    font-weight: bold;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    font-family: 'Ulagadi Extra Light';
+    font-weight: bold;
+    font-size: 17px;
+    color: #000;
+    padding: 0 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navigation ul li+li a::before {
+    content: "";
+    position: absolute;
+    align-items: center;
+    top: 3px;
+    background: #000;
+    width: 2px;
+    height: 16px;
+    left: 0;
+    transform: skewX(-20deg);
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+.navigation ul li {
+    display: flex;
+    align-items: center;
+}
+
+.navigation a img {
+    height: 24px;
+}
+
+.header-logo img {
+    height: 80px;
+    transition: filter .1s ease, transform .1s ease;
+}
+
+.header-logo img:hover {
+    filter: drop-shadow(0px 0px 5px #fff);
+    transform: scale(1.05);
+}
+
+header {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background: #fff;
+    border-bottom: 5px solid #000;
+}
+
+.session {
+    display: flex;
+    gap: 25px;
+}
+
+/* Página de inicio */
+
+.button1 {
+    font-family: 'Ulagadi Extra Light';
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #000;
+    color: #000;
+    box-shadow: 0 0 #000;
+    transition: box-shadow .1s ease, transform .1s ease;
+}
+
+.button1:hover {
+    box-shadow: 3px 3px #000;
+    transform: scale(1.05);
+}
+
+.container-home {
+    display: flex;
+    justify-content: center;
+}
+
+.package-container-home {
+    border: 3px solid #000;
+    box-shadow: 5px 5px #000;
+    padding: 50px 0px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+}
+
+.selection {
+    padding: 5px;
+    display: flex;
+    gap: 25px;
+    border: 3px solid #000;
+}
+
+.selection div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.selection input {
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.selection input[type=submit] {
+    border: none;
+    padding: 5px;
+    background: #238e98;
+    font-family: 'Ulagadi Extra Light';
+    font-weight: bold;
+    color: #fff;
+    transition: transform .1s ease, background .1s ease;
+}
+
+.selection input[type=submit]:hover {
+    background: #000;
+    transform: scale(1.05);
+}
+
+.selection input:focus-visible {
+    outline: none;
+    border-bottom: 3px solid #000;
+}
+
+.home-intro {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 200px;
+}
+
+.login {
+    background: #fff;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 25px;
+    border: 2px solid #000;
+    box-shadow: 5px 5px #000;
+    border-radius: 5px;
+}
+
+.login input[type=submit] {
+    background: #238e98;
+    border: none;
+    border-radius: 5px;
+    width: 50%;
+    height: 50px;
+    color: #fff;
+    font-family: 'Ulagadi Extra Light';
+    font-weight: bold;
+    border: 2px solid #000;
+    transition: box-shadow .1s ease, transform .1s ease;
+}
+
+.login input[type=submit]:hover {
+    box-shadow: 5px 5px #000;
+    transform: scale(1.05);
+}
+
+.field {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    gap: 5px;
+    margin-bottom: 25px;
+    border: 2px solid #000;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.field:has(input:focus-visible) {
+    outline: 2px solid #fff;
+    border: 2px solid #000;
+    box-shadow: 0 0 0 4px #000;
+}
+
+.field input {
+    border: none;
+}
+
+.field input:focus-visible {
+    outline: none;
+}
+
+.password-field input[type=password] {
+    width: 90%;
+}
+
+.password-field {
+    display: flex;
+    align-items: center;
+}
+
+/* ver contraseña jaja */
+
+.ojo-toggle {
+    appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.ojo-toggle::before,
+.ojo-toggle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    margin-bottom: 200px;
+    width: 32px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
+}
+
+/* Ojo tachado (no marcado) */
+.ojo-toggle::before {
+    background-image: url(../media/ocultado.svg);
+    opacity: 1;
+}
+
+/* Ojo abierto (marcado) */
+.ojo-toggle::after {
+    background-image: url(../media/ver.svg);
+    opacity: 0;
+}
+
+.ojo-toggle:checked::before {
+    opacity: 0;
+}
+
+.ojo-toggle:checked::after {
+    opacity: 1;
+}
