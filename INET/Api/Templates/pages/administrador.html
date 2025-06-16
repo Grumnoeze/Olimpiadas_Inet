@@ -2,8 +2,13 @@
 {% load static %}
 
 {% block contenedor %}
-    <div class="contendor_login">
-        <img src="" alt="">
+<style>
+    body{
+        background: #238e98 url(../../static/media/session.png) repeat top center / 2000px !important;
+        overflow-y: visible !important;
+    }
+</style>
+    <div class="upload">
         <form action="" method="post">
             <h1>Añadir Paquetes</h1>
             {% csrf_token %} 
