@@ -2,10 +2,13 @@
 {% load static %}
 
 {% block contenedor %}
-    <form action="" method="post" enctype="multipart/form-data" class="formu">
-        {% csrf_token %}
-        {{forms}}
-        <input type="submit" value="registro">
-        <h2>{{Mensaje}}</h2>
-    </form>
+    <div class="contendor_login">
+        <img src="" alt="">
+        <form action="" method="post">
+            <h1>Añadir Paquetes</h1>
+            {% csrf_token %} 
+            {{forms}}
+            <input type="submit" value="Registrar">
+        </form>
+    </div>
 {% endblock %}

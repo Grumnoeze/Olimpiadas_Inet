@@ -10,11 +10,6 @@ from django.contrib.auth import logout,login,authenticate
 
 from django.contrib.admin.views.decorators import staff_member_required
 
-
-staff_member_required(login_url='login')
-def vistaAdmin(request):
-    return render(request, 'pages/administrador.html')
-
 def Home(request):
     return render (request,"Index.html")
 
@@ -37,6 +32,10 @@ def Registro(request):
     return render(request, 'registration/registro.html', data)
 
 # Create your views here.
+
+staff_member_required(login_url='login')
+def vistaAdmin(request):
+    return render(request, 'pages/administrador.html')
 
 def AgregarPaquete(request):
     data = {

@@ -5,5 +5,5 @@ urlpatterns = [
     path('', Home, name='home'),
     path('logouts/', salir, name='logouts'),
     path('Registro/', Registro, name='registro'),
-    path('Administrador/', vistaAdmin, name='Admin'),
+    path('Administrador/', AgregarPaquete, name='Admin'),
 ]
