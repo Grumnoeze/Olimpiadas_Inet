@@ -2,19 +2,12 @@
 {% load static %}
 
 {% block contenedor %}
-<style>
-    body{
-        background: #238e98 url(../../static/media/session.png) repeat top center / 2000px !important;
-        overflow-y: visible !important;
-    }
-</style>
-<div class="reg">
+<div class="contendor_login">
         <img src="" alt="">
         <form action="" method="post">
             <h1>Registrar Usuario</h1>
             {% csrf_token %} 
             {{form}}
-            <p>¿No tienes cuenta? <a href="{% url 'registro' %}">Regístrate</a></p>
             <input type="submit" value="Registrar">
         </form>
     </div>

@@ -2,18 +2,14 @@
 {% load static %}
 
 {% block contenedor %}
-<style>
-    body{
-        background: #238e98 url(../../static/media/session.png) repeat top center / 2000px !important;
-    }
-</style>
 <div class="contendor_login">
-        <form action="" method="post" class="login">
-            <h1>Iniciar Sesión</h1>
-            {% csrf_token %} 
-            {{form}}
-            <input type="submit" value="Iniciar sesión">
-            <p>¿No tienes cuenta? <a href="{% url 'registro' %}">Regístrate</a></p>
-        </form>
-    </div>
+    <img src="" alt="">
+    <form action="" method="post">
+        <h1>Login</h1>
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Login">
+        <p>¿No tienes cuenta? <a href="{% url 'registro' %}">Regístrate</a></p>
+    </form>
+</div>
 {% endblock %}

@@ -5,6 +5,5 @@ urlpatterns = [
     path('', Home, name='home'),
     path('logouts/', salir, name='logouts'),
     path('Registro/', Registro, name='registro'),
-    path('Admin/', vistaAdmin, name='Admin'),
-    
+    path('Administrador/', vistaAdmin, name='Admin'),
 ]

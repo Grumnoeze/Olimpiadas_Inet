@@ -13,7 +13,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 
 staff_member_required(login_url='login')
 def vistaAdmin(request):
-    return render(request, 'pages/admin.html')
+    return render(request, 'pages/administrador.html')
 
 def Home(request):
     return render (request,"Index.html")
@@ -38,3 +38,15 @@ def Registro(request):
 
 # Create your views here.
 
+def AgregarPaquete(request):
+    data = {
+        'forms': AddPaquete()
+    }
+    if request.method == 'POST':
+        formulario = AddPaquete(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect('home')
+        else:
+            data['forms'] = formulario
+    return render(request, 'pages/administrador.html', data)
