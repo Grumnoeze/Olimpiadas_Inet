@@ -43,8 +43,6 @@ class Carrito(models.Model):
         return self.usuario.nombre
     
 class Aplicacion(models.Model):
-    
-
     def __int__(self):
         return self.nombre
 

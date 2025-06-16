@@ -11,6 +11,16 @@ from django.contrib.auth import logout,login,authenticate
 from django.contrib.admin.views.decorators import staff_member_required
 
 def Home(request):
+    query= Paquete.objects.all()
+    if request.method == 'POST':
+        search = request.POST.get('search')
+        if search:
+            query = Paquete.objects.filter(
+                Q(nombre__icontains=search) | 
+                Q(descripcion__icontains=search)
+            )
+    else:
+        query = Paquete.objects.all()
     return render (request,"Index.html")
 
 def salir(request):
@@ -34,9 +44,6 @@ def Registro(request):
 # Create your views here.
 
 staff_member_required(login_url='login')
-def vistaAdmin(request):
-    return render(request, 'pages/administrador.html')
-
 def AgregarPaquete(request):
     data = {
         'forms': AddPaquete()
@@ -49,3 +56,10 @@ def AgregarPaquete(request):
         else:
             data['forms'] = formulario
     return render(request, 'pages/administrador.html', data)
+
+# def vistapaquetes(request):
+#     paquetes = Paquete.objects.all()
+#     data = {
+#         'paquetes': paquetes
+#     }
+#     return render(request, 'pages/packages.html', data)

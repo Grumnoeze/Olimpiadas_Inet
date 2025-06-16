@@ -13,15 +13,17 @@
 </head>
 
 <body class="body-index">
+
     <header>
-        <a href="{% url 'home' %}" class="header-logo"><img src="{% static 'media/logo.png' %}" alt=""></a>
+        <a href="" class="header-logo"><img src="../static/media/logo.png" alt=""></a>
         <nav class="navigation">
             <ul>
-                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="">Inicio</a></li>
                 <li><a href="">Sobre nosotros</a></li>
-                <li><a href="">Paquetes</a></li>
+                <li><a href="{% url 'vistapaquetes'}">Paquetes</a></li>
                 <li><a href="">Reseñas</a></li>
-                <li><a href=""><img src="{% static 'media/carrito.svg' %}" alt=""></a></li>
+                <li><a href=""><img src="../static/media/carrito.svg" alt=""></a></li>
+                <li><a href=""><img src="../static/media/buscar.svg" alt=""></a></li>
             </ul>
         </nav>
         <!-- <nav class="session">
@@ -30,20 +32,21 @@
         </nav> -->
         <nav class="session">
             {% if user.is_authenticated %}
-                {% if user.is_staff %}
-                <a href="{% url 'Admin' %}" class="button1">Zona Admin</a>
-                {% endif %}
-                <a href="{% url 'logouts' %}" id="contacto_btl" class="button1">Cerrar Sesión</a>
-                {% else %}
-                <a href="{% url 'login' %}" id="contacto_btl" class="button1">Ingresar</a>
+            {% if user.is_staff %}
+            <a href="{% url 'Admin' %}" class="button1">Zona Admin</a>
             {% endif %}
-            </nav>
+            <a href="{% url 'logouts' %}" id="contacto_btl" class="button1">Cerrar Sesión</a>
+            {% else %}
+            <a href="{% url 'login' %}" id="contacto_btl" class="button1">Ingresar</a>
+            {% endif %}
+        </nav>
     </header>
     {% block contenedor %}
     <main>
         <section class="home-intro">
             <p style="font-size: 25px;">Nunca pares de</p>
-            <h1 style="color: #238e98; -webkit-text-stroke: #238e98 2px; font-weight: 900; font-size: 75px;">EXPLORAR</h1>
+            <h1 style="color: #238e98; -webkit-text-stroke: #238e98 2px; font-weight: 900; font-size: 75px;">EXPLORAR
+            </h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est laborum debitis, minima illum sequi
                 quibusdam beatae? Labore vitae atque ipsum ad minima id maxime eveniet illo mollitia, dolores eius vero?
@@ -52,21 +55,16 @@
         <section class="container-home">
             <section class="package-container-home">
                 <p style="font-size: x-large;">¿A dónde irás?</p>
-                <article class="selection">
-                    <div>
-                        <label for="">Voy a</label>
-                        <input type="text" name="" id="">
-                    </div>
-                    <div>
-                        <label for="">Desde</label>
-                        <input type="date" name="" id="salida">
-                    </div>
-                    <div>
-                        <label for="">Hasta</label>
-                        <input type="date" name="" id="regreso">
-                    </div>
-                    <input type="submit" value="¡Empecemos!">
-                </article>
+                {% for i in paquetes %}
+                <div class="package-card">
+                    <img src="{{ i.imagen }}" alt="Imagen del paquete">
+                    <h2>{{ i.nombre }}</h2>
+                    <p>{{ i.descripcion }}</p>
+                    <p>Precio: ${{ i.precio }}</p>
+                    <a href="{% url 'detallepaquete' i.id %}" class="button1">Ver Detalles</a>
+                </div>
+                {% endfor %}
+                
             </section>
         </section>
     </main>
@@ -79,6 +77,5 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
-    
-    
