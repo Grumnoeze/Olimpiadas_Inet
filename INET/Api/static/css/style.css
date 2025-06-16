@@ -194,10 +194,90 @@ header{
     justify-content: center;
     align-items: center;
     margin: auto;
+    margin-top: 5%;
     padding: 25px;
     border: 2px solid #000;
     box-shadow: 5px 5px #0f283c;
     border-radius: 5px;
+}
+
+.reg{
+    background: #fff;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 2%;
+    padding: 25px;
+    border: 2px solid #000;
+    box-shadow: 5px 5px #0f283c;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
+
+.reg div{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    margin-bottom: 25px;
+    border: 2px solid #000;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.reg form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.reg input[type=submit]{
+    background: #238e98;
+    border: none;
+    border-radius: 5px;
+    width: 50%;
+    height: 50px;
+    color: #fff;
+    font-family: 'Ulagadi Extra Light';
+    font-weight: bold;
+    border: 2px solid #000;
+    transition: box-shadow .1s ease, transform .1s ease;
+}
+
+.reg input[type=submit]:hover{
+    box-shadow: 3px 3px #0f283c;
+    transform: scale(1.05);
+}
+
+.reg div:has(input:focus-visible){
+    outline: 2px solid #fff;
+    border: 2px solid #000;
+    box-shadow: 0 0 0 4px #000;
+}
+
+.reg div input{
+    border: none !important;
+    border-bottom: 2px solid #000 !important;
+}
+
+.reg div input:focus-visible{
+    outline: none;
+}
+
+.helptext, .errorlist{
+    font-size: 10px;
+    border: none !important;
+    margin-bottom: 0 !important;
+}
+
+.helptext ul, .errorlist{
+    list-style: none;
+    margin: 0;
 }
 
 .login input[type=submit]{
@@ -218,7 +298,7 @@ header{
     transform: scale(1.05);
 }
 
-.field{
+.login div{
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -230,17 +310,18 @@ header{
     border-radius: 5px;
 }
 
-.field:has(input:focus-visible){
+.login div:has(input:focus-visible){
     outline: 2px solid #fff;
     border: 2px solid #000;
     box-shadow: 0 0 0 4px #000;
 }
 
-.field input{
-    border: none;
+.login div input{
+    border: none !important;
+    border-bottom: 2px solid #000 !important;
 }
 
-.field input:focus-visible{
+.login div input:focus-visible{
     outline: none;
 }
 
@@ -251,51 +332,6 @@ header{
 .password-field{
     display: flex;
     align-items: center;
-}
-
-/* ver contraseña jaja */
-
-.ojo-toggle {
-    appearance: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    outline: none;
-}
-
-.ojo-toggle::before,
-.ojo-toggle::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    margin-bottom: 200px;
-    width: 32px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: translateY(-50%);
-}
-
-/* Ojo tachado (no marcado) */
-.ojo-toggle::before {
-    background-image: url(../media/ocultado.svg);
-    opacity: 1;
-}
-
-/* Ojo abierto (marcado) */
-.ojo-toggle::after {
-    background-image: url(../media/ver.svg);
-    opacity: 0;
-}
-
-.ojo-toggle:checked::before {
-    opacity: 0;
-}
-
-.ojo-toggle:checked::after {
-    opacity: 1;
 }
 
 .cart-title{
