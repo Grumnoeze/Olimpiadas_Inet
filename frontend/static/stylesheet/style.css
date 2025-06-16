@@ -300,7 +300,9 @@ header{
     border-bottom: 3px solid #000;
 }
 
-.cart-title button{
+.cart-title a{
+    text-decoration: none;
+    color: #000;
     display: flex;
     align-items: center;
     padding: 5px;
@@ -313,12 +315,12 @@ header{
     transition: box-shadow .1s ease, transform .1s ease;
 }
 
-.cart-title button:hover{
+.cart-title a:hover{
     box-shadow: 3px 3px #000;
     transform: scale(1.05);
 }
 
-.cart-title button img{
+.cart-title a img{
     height: 25px;
 }
 
@@ -539,4 +541,190 @@ header{
     background: #238e98;
     color: #fff;
     font-weight: bold;
+}
+
+/* panel admin jaja */
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.panel-ui input[type=text]{
+    width: 80%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.panel-ui input[type=text]:focus-visible{
+    outline: 2px solid #fff;
+    box-shadow: 0 0 0 4px black;
+}
+
+.panel-ui input[type=submit], .panel-ui a{
+    border: 2px solid #000;
+    color: #fff;
+    background: #238e98;
+    border-radius: 5px;
+    width: 100px;
+    transition: transform .1s ease, box-shadow .1s ease;
+}
+
+.panel-ui input[type=submit]:hover, .panel-ui a:hover{
+    box-shadow: 3px 3px #000;
+    transform: scale(1.05);
+}
+
+.panel-ui input[type=submit]:has(.pene:focus-visible){
+    outline: #fff;
+    box-shadow: 0 0 5px yellow;
+}
+
+.search{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.nuevo{
+    width: 200px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.tabla{
+    width: 100%;
+}
+
+.tabla thead{
+    background: #238e98;
+    color: #fff;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.tabla tbody{
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.tabla thead tr th{
+    border: 1px solid #fff;
+    padding: 5px;
+}
+
+.tabla tbody tr td{
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.table-container{
+    margin-top: 25px;
+    width: 100%;
+    padding: 15px;
+    background: #fff;
+    border: 2px solid #000;
+    box-shadow: 3px 3px #000;
+}
+
+.table-description{
+    max-width: 595px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.acciones a{
+    text-decoration: none;
+}
+
+.upload{
+    border: 2px solid #000;
+    box-shadow: 3px 3px #000;
+    border-radius: 5px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: #238e98;
+    margin: auto;
+    margin-top: 50px;
+    width: 75%;
+    height: auto;
+}
+
+.image{
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-upload{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+}
+
+.image img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    height: 200px;
+    width: 250px;
+}
+
+.input{
+    background: #fff;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input input{
+    padding: 5px;
+}
+
+.input textarea{
+    padding: 5px;
+    resize: none;
+    height: 200px;
+    overflow: hidden;
+}
+
+.input input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+.finalizar{
+    display: flex;
+    width: 100%;
+    gap: 50px;
+}
+
+.finalizar input{
+    height: 50px;
+    width: 100%;
+    gap: 25px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    transition: transform .1s ease, box-shadow .1s ease;
+}
+
+.finalizar input:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px #000;
 }
