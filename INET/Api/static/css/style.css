@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,30 +15,27 @@
     src: url(../font/UlagadiSansExtraLight.ttf);
 }
 
-body {
+body{
     background-repeat: no-repeat;
     font-family: 'Ulagadi Extra Light';
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label {
+p, h1, h2, h3, h4, h5, h6, label{
     font-family: 'Ulagadi Extra Light';
     font-weight: bold;
 }
 
-.navigation ul {
+p{
+    margin: 0 !important;
+}
+
+.navigation ul{
     display: flex;
     list-style: none;
     margin: 0;
 }
 
-.navigation a {
+.navigation a{
     text-decoration: none;
     font-family: 'Ulagadi Extra Light';
     font-weight: bold;
@@ -50,7 +47,7 @@ label {
     align-items: center;
 }
 
-.navigation ul li+li a::before {
+.navigation ul li + li a::before{
     content: "";
     position: absolute;
     align-items: center;
@@ -62,30 +59,30 @@ label {
     transform: skewX(-20deg);
 }
 
-.navigation a:hover {
+.navigation a:hover{
     text-decoration: underline;
 }
 
-.navigation ul li {
+.navigation ul li{
     display: flex;
     align-items: center;
 }
 
-.navigation a img {
+.navigation a img{
     height: 24px;
 }
 
-.header-logo img {
+.header-logo img{
     height: 80px;
-    transition: filter .1s ease, transform .1s ease;
+    transition: filter .1s ease, transform .1s ease;  
 }
 
-.header-logo img:hover {
+.header-logo img:hover{
     filter: drop-shadow(0px 0px 5px #fff);
     transform: scale(1.05);
 }
 
-header {
+header{
     display: flex;
     height: 100px;
     align-items: center;
@@ -95,14 +92,14 @@ header {
     border-bottom: 5px solid #000;
 }
 
-.session {
+.session{
     display: flex;
     gap: 25px;
 }
 
 /* Página de inicio */
 
-.button1 {
+.button1{
     font-family: 'Ulagadi Extra Light';
     background: #fff;
     padding: 10px;
@@ -115,19 +112,20 @@ header {
     transition: box-shadow .1s ease, transform .1s ease;
 }
 
-.button1:hover {
+.button1:hover{
     box-shadow: 3px 3px #000;
     transform: scale(1.05);
 }
 
-.container-home {
+.container-home{
     display: flex;
     justify-content: center;
 }
 
-.package-container-home {
-    border: 3px solid #000;
-    box-shadow: 5px 5px #000;
+.package-container-home{
+    border: 2px solid #000;
+    box-shadow: 3px 3px #000;
+    border-radius: 5px;
     padding: 50px 0px;
     background: #fff;
     display: flex;
@@ -137,25 +135,26 @@ header {
     width: 75%;
 }
 
-.selection {
+.selection{
+    border-radius: 5px;
     padding: 5px;
     display: flex;
     gap: 25px;
-    border: 3px solid #000;
+    border: 2px solid #000;
 }
 
-.selection div {
+.selection div{
     display: flex;
     flex-direction: column;
     padding: 5px;
 }
 
-.selection input {
+.selection input{
     border: none;
     border-bottom: 1px solid #000;
 }
 
-.selection input[type=submit] {
+.selection input[type=submit]{
     border: none;
     padding: 5px;
     background: #238e98;
@@ -165,17 +164,16 @@ header {
     transition: transform .1s ease, background .1s ease;
 }
 
-.selection input[type=submit]:hover {
-    background: #000;
-    transform: scale(1.05);
+.selection input[type=submit]:hover{
+    background: #0f283c;
 }
 
-.selection input:focus-visible {
+.selection input:focus-visible{
     outline: none;
     border-bottom: 3px solid #000;
 }
 
-.home-intro {
+.home-intro{
     margin-top: 25px;
     width: 100%;
     display: flex;
@@ -186,7 +184,9 @@ header {
     padding: 0px 200px;
 }
 
-.login {
+/* Login y register */
+
+.login{
     background: #fff;
     width: 50%;
     display: flex;
@@ -196,11 +196,11 @@ header {
     margin: auto;
     padding: 25px;
     border: 2px solid #000;
-    box-shadow: 5px 5px #000;
+    box-shadow: 5px 5px #0f283c;
     border-radius: 5px;
 }
 
-.login input[type=submit] {
+.login input[type=submit]{
     background: #238e98;
     border: none;
     border-radius: 5px;
@@ -213,12 +213,12 @@ header {
     transition: box-shadow .1s ease, transform .1s ease;
 }
 
-.login input[type=submit]:hover {
-    box-shadow: 5px 5px #000;
+.login input[type=submit]:hover{
+    box-shadow: 3px 3px #0f283c;
     transform: scale(1.05);
 }
 
-.field {
+.field{
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -230,25 +230,25 @@ header {
     border-radius: 5px;
 }
 
-.field:has(input:focus-visible) {
+.field:has(input:focus-visible){
     outline: 2px solid #fff;
     border: 2px solid #000;
     box-shadow: 0 0 0 4px #000;
 }
 
-.field input {
+.field input{
     border: none;
 }
 
-.field input:focus-visible {
+.field input:focus-visible{
     outline: none;
 }
 
-.password-field input[type=password] {
+.password-field input[type=password]{
     width: 90%;
 }
 
-.password-field {
+.password-field{
     display: flex;
     align-items: center;
 }
@@ -296,4 +296,441 @@ header {
 
 .ojo-toggle:checked::after {
     opacity: 1;
+}
+
+.cart-title{
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 25px;
+    border-bottom: 3px solid #000;
+}
+
+.cart-title a{
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+    border: 2px solid #000;
+    background: #fff;
+    font-family: 'Ulagadi Extra Light';
+    font-weight: bold;
+    border-radius: 5px;
+    transition: box-shadow .1s ease, transform .1s ease;
+}
+
+.cart-title a:hover{
+    box-shadow: 3px 3px #000;
+    transform: scale(1.05);
+}
+
+.cart-title a img{
+    height: 25px;
+}
+
+.cart-sections{
+    display: flex;
+    flex-direction: row;
+}
+
+.article{
+    margin: 50px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    border-radius: 5px;
+    border: 2px solid #000;
+    box-shadow: 3px 3px #000;
+    height: 100%;
+    width: 55%;
+    padding: 25px;
+    background: #fff;
+}
+
+.article hr{
+    margin: 0;
+    padding: 0;
+    height: 2px;
+    background: #000;
+    opacity: 1;
+}
+
+.picture img{
+    border: 2px solid #000;
+    border-radius: 5px;
+    height: 100px;
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+
+.borrar img{
+    height: 25px;
+}
+
+.borrar{
+    background: transparent;
+    border: none;
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info{
+    width: 100%;
+}
+
+.estadia p{
+    border: 2px solid #000;
+    background: #aba;
+    width: 142px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.people{
+    margin-top: 10px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.people button{
+    border: 2px solid #000;
+    color: #000;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    transition: transform .1s ease, box-shadow .1s ease;
+}
+
+.people button:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 2px #000;
+}
+
+.precios{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment{
+    font-size: 20px;
+    color: #000;
+    position: sticky !important;
+    top: 50px;
+    margin: 50px;
+    padding: 25px;
+    background: #fff;
+    height: 100%;
+    width: 35%;
+    border-radius: 5px;
+    border: 2px solid #000;
+    box-shadow: 3px 3px #000;
+}
+
+.cantidad{
+    display: flex;
+}
+
+.payment-order{
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtotal{
+    display: flex;
+    justify-content: space-between;
+}
+
+.impuestos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.final{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons{
+    margin-top: 50px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.proceder{
+    background: #238e98;
+    border: 2px solid #000;
+    border-radius: 5px; 
+    color: #fff;
+}
+
+.continuar{
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.nada{
+    padding: 15px;
+    font-weight: bold;
+}
+
+.nohaynada p{
+    font-size: 30px;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+}
+
+.nohaynada{
+    margin-top: 50px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nohaynada img{
+    height: 200px;
+}
+
+.package-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 25px;
+}
+
+.package{
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: 3px 3px #000;
+    width: auto;
+    height: auto;
+    background: #fff;
+}
+
+.package img{
+    border-radius: 5px 5px 0 0;
+    border-bottom: 2px solid #000;
+    width: 321px;
+}
+
+.package-info{
+    padding: 15px;
+}
+
+.description p{
+    font-size: 12px;
+}
+
+.package-price{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.addtocart{
+    border: 2px solid #000;
+    width: 100%;
+    border-radius: 5px;
+    background: #238e98;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* panel admin jaja */
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.panel-ui input[type=text]{
+    width: 80%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.panel-ui input[type=text]:focus-visible{
+    outline: 2px solid #fff;
+    box-shadow: 0 0 0 4px black;
+}
+
+.panel-ui input[type=submit], .panel-ui a{
+    border: 2px solid #000;
+    color: #fff;
+    background: #238e98;
+    border-radius: 5px;
+    width: 100px;
+    transition: transform .1s ease, box-shadow .1s ease;
+}
+
+.panel-ui input[type=submit]:hover, .panel-ui a:hover{
+    box-shadow: 3px 3px #000;
+    transform: scale(1.05);
+}
+
+.panel-ui input[type=submit]:has(.pene:focus-visible){
+    outline: #fff;
+    box-shadow: 0 0 5px yellow;
+}
+
+.search{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.nuevo{
+    width: 200px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.tabla{
+    width: 100%;
+}
+
+.tabla thead{
+    background: #238e98;
+    color: #fff;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.tabla tbody{
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.tabla thead tr th{
+    border: 1px solid #fff;
+    padding: 5px;
+}
+
+.tabla tbody tr td{
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.table-container{
+    margin-top: 25px;
+    width: 100%;
+    padding: 15px;
+    background: #fff;
+    border: 2px solid #000;
+    box-shadow: 3px 3px #000;
+}
+
+.table-description{
+    max-width: 595px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.acciones a{
+    text-decoration: none;
+}
+
+.upload{
+    border: 2px solid #000;
+    box-shadow: 3px 3px #000;
+    border-radius: 5px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: #238e98;
+    margin: auto;
+    margin-top: 50px;
+    width: 75%;
+    height: auto;
+}
+
+.image{
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-upload{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+}
+
+.image img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    height: 200px;
+    width: 250px;
+}
+
+.input{
+    background: #fff;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input input{
+    padding: 5px;
+}
+
+.input textarea{
+    padding: 5px;
+    resize: none;
+    height: 200px;
+    overflow: hidden;
+}
+
+.input input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+.finalizar{
+    display: flex;
+    width: 100%;
+    gap: 50px;
+}
+
+.finalizar input{
+    height: 50px;
+    width: 100%;
+    gap: 25px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    transition: transform .1s ease, box-shadow .1s ease;
+}
+
+.finalizar input:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px #000;
 }

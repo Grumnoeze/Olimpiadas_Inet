@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ValidationError
 
 # Create your models here.
 class Usuario(models.Model):
@@ -14,9 +15,16 @@ class Paquete(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=30)
     descripcion = models.TextField()
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-    def __int__(self):
-        return self.nombre
+    precio_unit = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
+    fecha_vuelo = models.DateField()
+    fecha_regreso = models.DateField()
+    
+
+def clean(self):
+        if self.fecha_regreso < self.fecha_vuelo:
+            raise ValidationError("La fecha de regreso no puede ser anterior a la fecha de vuelo.")
+def __int__(self):
+    return self.nombre
     
 
 class Carrito(models.Model):
@@ -27,6 +35,9 @@ class Carrito(models.Model):
     subtotal = models.DecimalField(max_digits=10, decimal_places=2)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
 
+    def save(self, *args, **kwargs):
+        self.subtotal = self.paquete.precio_unit * self.cantidad
+        super().save(*args, **kwargs)
     def __int__(self):
         return self.usuario.nombre
     

@@ -8,6 +8,13 @@ from django.db.models import Q
 
 from django.contrib.auth import logout,login,authenticate
 
+from django.contrib.admin.views.decorators import staff_member_required
+
+
+staff_member_required(login_url='login')
+def vistaAdmin(request):
+    return render(request, 'pages/admin.html')
+
 def Home(request):
     return render (request,"Index.html")
 
